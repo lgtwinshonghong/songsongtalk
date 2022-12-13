@@ -104,13 +104,27 @@ public class UserTable extends Table{
         return res;
     }
 
-    public String getUserID(String phone,String name){
+    public String getUserID(String phone,String name)  {
 
-        ResultSet rs = executeQuery("SELECT FROM "+tableName+"WHERE nickname =" +phone+"and name ="+name+";");
+        ResultSet rs = executeQuery("select ID from "+ tableName +" where phonenumber = \"" + phone +"\" and name = \""+ name +"\";");
         String res = "";
         try {
             if(rs.next()) {
                 res = rs.getString("ID");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return res;
+    }
+
+    public String getUserPW(String phone,String name,String id)  {
+
+        ResultSet rs = executeQuery("select password from "+ tableName +" where phonenumber = \"" + phone +"\" and name = \""+ name +"\" and id = \""+ id +"\"" + ";");
+        String res = "";
+        try {
+            if(rs.next()) {
+                res = rs.getString("password");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

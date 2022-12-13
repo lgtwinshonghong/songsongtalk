@@ -35,7 +35,7 @@ public class SignupFrame implements ActionListener {
 
         sign_jf.add(jl);
 
-        jl = new JLabel("Name");
+        jl = new JLabel("NAME");
         jl.setSize(80, 30);
         jl.setLocation(30, 90);
         jl.setHorizontalAlignment(JLabel.LEFT);

@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 class LoginFrame implements ActionListener {
-    JTextField id, password;
+    JTextField id,password;
     UserTable user1;
     //ArticleTable article1;
     int userNumID;
@@ -120,12 +120,13 @@ class LoginFrame implements ActionListener {
         }
 
         else if(e.getActionCommand() == "forgotID"){
-               forgotID f_id = new forgotID();
+               forgotID f_id = new forgotID(user1);
                f_id.createFindIDframe();
         }
 
         else if(e.getActionCommand() == "forgotPW"){
-
+               forgotPW f_pw = new forgotPW(user1);
+               f_pw.createFindPWframe();
         }
 
     }

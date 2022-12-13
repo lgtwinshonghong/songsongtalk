@@ -35,7 +35,7 @@ public class kakao_EG {
         System.out.println("create database!");
 
         UserTable user1 = new UserTable(con, "userTables");
-        user1.makeTable("userTables", "(num int not null, ID varchar(16) not null, password varchar(16) not null, name varchar(16), phonenumber varchar(45), primary key(num, ID) )");
+        user1.makeTable("userTables", "(num int not null, ID varchar(16) not null, password varchar(16) not null, name varchar(16), phonenumber varchar(45), primary key(num, ID,phonenumber) )");
         System.out.println("create table!");
 
 
